@@ -1,0 +1,31 @@
+{
+  "name": "gulp-responsive",
+  "version": "0.0.0",
+  "description": "",
+  "license": "MIT",
+  "repository": "mahnunchik/gulp-responsive",
+  "author": {
+    "name": "Eugeny Vlasenko",
+    "email": "mahnunchik@gmail.com",
+    "url": "https://github.com/mahnunchik"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin"
+  ],
+  "dependencies": {
+    "gulp-util": "^3.0.0",
+    "through2": "^0.6.1"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
