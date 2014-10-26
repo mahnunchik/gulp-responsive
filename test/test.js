@@ -31,7 +31,7 @@ describe('gulp-responsive', function() {
     stream.on('end', cb);
     stream.on('data', function(){
       throw new Error('data should not be provided');
-    })
+    });
 
     stream.end();
   });
@@ -48,14 +48,14 @@ describe('gulp-responsive', function() {
       counter++;
       assertFile(file);
       if (counter > 1) {
-        throw new Error('more than one file is provided')
+        throw new Error('more than one file is provided');
       }
     });
 
     stream.on('end', function() {
       assert.equal(counter, 1);
       cb();
-    })
+    });
 
     stream.write(makeFile('gulp.png'));
     stream.end();
@@ -75,14 +75,14 @@ describe('gulp-responsive', function() {
       counter++;
       assertFile(file);
       if (counter > 2) {
-        throw new Error('more than two files are provided')
+        throw new Error('more than two files are provided');
       }
     });
 
     stream.on('end', function() {
       assert.equal(counter, 2);
       cb();
-    })
+    });
 
     stream.write(makeFile('gulp.png'));
     stream.end();
@@ -102,14 +102,14 @@ describe('gulp-responsive', function() {
       counter++;
       assertFile(file);
       if (counter > 2) {
-        throw new Error('more than two files are provided')
+        throw new Error('more than two files are provided');
       }
     });
 
     stream.on('end', function() {
       assert.equal(counter, 2);
       cb();
-    })
+    });
 
     stream.write(makeFile('gulp.png'));
     stream.end();
@@ -129,7 +129,7 @@ describe('gulp-responsive', function() {
 
     stream.on('end', function() {
       cb();
-    })
+    });
 
     stream.write(makeFile('gulp.png'));
     stream.end();
