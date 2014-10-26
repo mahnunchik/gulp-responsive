@@ -1,7 +1,7 @@
 {
   "name": "gulp-responsive",
-  "version": "0.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "gulp responsive images",
   "main": "lib",
   "license": "MIT",
   "repository": "mahnunchik/gulp-responsive",
@@ -30,6 +30,6 @@
   },
   "devDependencies": {
     "jshint": "^2.5.6",
-    "mocha": "*"
+    "mocha": "^2.0.1"
   }
 }

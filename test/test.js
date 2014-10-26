@@ -103,7 +103,7 @@ describe('gulp-responsive', function() {
     stream.end();
   });
 
-  it('should provide rename image', function(cb){
+  it('should provide renamed image', function(cb){
     var config = [{
       name: 'gulp.png',
       rename: 'test.png'
