@@ -2,6 +2,7 @@
   "name": "gulp-responsive",
   "version": "0.0.0",
   "description": "",
+  "main": "lib",
   "license": "MIT",
   "repository": "mahnunchik/gulp-responsive",
   "author": {
@@ -13,19 +14,18 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "jshint lib test"
   },
-  "files": [
-    "index.js"
-  ],
   "keywords": [
     "gulpplugin"
   ],
   "dependencies": {
     "gulp-util": "^3.0.0",
-    "through2": "^0.6.1"
+    "through2": "^0.6.3"
   },
   "devDependencies": {
+    "jshint": "^2.5.6",
     "mocha": "*"
   }
 }
