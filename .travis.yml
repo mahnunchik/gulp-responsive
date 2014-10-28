@@ -1,6 +1,8 @@
 language: node_js
 node_js:
 - '0.10'
+before_script:
+  - curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | sudo bash -
 deploy:
   provider: npm
   email: mahnunchik@gmail.com
