@@ -24,7 +24,7 @@ gulp.task('default', function () {
     },{
       name: 'logo.png',
       width: 200 * 2,
-      rename: 'logo@2x/png'
+      rename: 'logo@2x.png'
     },{
       name: 'background-*.png',
       width: 700
@@ -33,10 +33,67 @@ gulp.task('default', function () {
 });
 ```
 
-
 ## API
 
 ### responsive(config, options)
+
+#### config
+
+Configuration can be provided in one of the following formats:
+
+##### 1.  Array of unique configurations
+
+```js
+[{
+  name: 'logo.png',
+  width: 200,
+  height: 100
+},{
+  name: 'banner.png',
+  width: 500
+}]
+```
+
+##### 2. Object of unique configurations. Keys are filenames.
+
+```js
+{
+  'logo.png': {
+    width: 300,
+    height: 200,
+    raname: 'logo@2x.png'
+  },
+  'background-*.png': {
+    width: 1400,
+    withoutEnlargement: true
+  }
+}
+```
+
+##### 3. Object of array of unique configurations. Keys are filenames.
+
+```js
+{
+  'logo.png': [{
+      width: 200,
+      raname: 'logo@1x.png'
+    },{
+      width: 400,
+      rename: 'logo@2x.png'
+    }],
+  'background-*': [{
+    height: 400
+  }]
+}
+```
+
+Configuration unit is an object:
+
+* name: String - filename glob pattern
+* width: Number - not set by default
+* height: Number - not set by default
+* withoutEnlargement: Boolean - default true
+* rename: String - new file name, file will not be renamed by dafault
 
 #### options
 
