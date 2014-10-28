@@ -1,8 +1,6 @@
 language: node_js
 node_js:
 - '0.10'
-before_script:
-  - curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | sudo bash -
 deploy:
   provider: npm
   email: mahnunchik@gmail.com
@@ -11,3 +9,5 @@ deploy:
   on:
     tags: true
     repo: mahnunchik/gulp-responsive
+before_install:
+  - curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | sudo bash -

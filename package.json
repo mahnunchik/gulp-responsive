@@ -18,7 +18,15 @@
     "lint": "jshint lib test"
   },
   "keywords": [
-    "gulpplugin"
+    "gulpplugin",
+    "gulp",
+    "sharp",
+    "responsive",
+    "img",
+    "images",
+    "picture",
+    "picturefill",
+    "scrset"
   ],
   "dependencies": {
     "async": "^0.9.0",

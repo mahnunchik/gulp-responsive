@@ -5,6 +5,11 @@
 
 ## Install
 
+
+`gulp-responsive` depends on [sharp](https://github.com/lovell/sharp). Sharp is fastest library for resizing images. 
+
+Before installing `gulp-responsive` you should install libvips library. More information and instruction can be found in [sharp readme](https://github.com/lovell/sharp#installation).
+
 ```sh
 $ npm install --save-dev gulp-responsive
 ```
@@ -70,7 +75,7 @@ Configuration can be provided in one of the following formats:
 }
 ```
 
-##### 3. Object of array of unique configurations. Keys are filenames.
+##### 3. Object of arrays of unique configurations. Keys are filenames.
 
 ```js
 {
@@ -89,11 +94,11 @@ Configuration can be provided in one of the following formats:
 
 Configuration unit is an object:
 
-* name: String - filename glob pattern
-* width: Number - not set by default
-* height: Number - not set by default
-* withoutEnlargement: Boolean - default true
-* rename: String - new file name, file will not be renamed by dafault
+* name: *String* - filename glob pattern
+* width: *Number* - not set by default
+* height: *Number* - not set by default
+* withoutEnlargement: *Boolean* - default true
+* rename: *String* - new filename, file will not be renamed by dafault
 
 #### options
 
