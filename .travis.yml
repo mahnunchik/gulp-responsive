@@ -7,6 +7,7 @@ deploy:
   api_key:
     secure: dToBKY9QRznavUUBBcttoOKbLV2vGB8AxHUhGT8YbujkI7wPM4lyJv0VYlGOUdOL4F7D8WeP+aIB4n7YNqHOWxi+XfGjC6Qpw+GlwL00ZBzbbQBhUshJq00Wq8SVfrAZcYQXwVM969cw8EaiRfAGIlSKdzv59B4pJGzhj2holNs=
   on:
+    branch: master
     tags: true
     repo: mahnunchik/gulp-responsive
 before_install:
