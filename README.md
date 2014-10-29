@@ -6,9 +6,9 @@
 ## Install
 
 
-`gulp-responsive` depends on [sharp](https://github.com/lovell/sharp). Sharp is fastest library for resizing images. 
+`gulp-responsive` depends on [sharp](https://github.com/lovell/sharp). Sharp is one of the fastest Node libraries for resizing JPEG, PNG, WebP and TIFF images. 
 
-Before installing `gulp-responsive` you should install libvips library. More information and instruction can be found in [sharp readme](https://github.com/lovell/sharp#installation).
+Before installing `gulp-responsive` you should install the [libvips](https://github.com/jcupitt/libvips) library. Further information and instructions can be found in the [sharp readme](https://github.com/lovell/sharp#installation).
 
 ```sh
 $ npm install --save-dev gulp-responsive
