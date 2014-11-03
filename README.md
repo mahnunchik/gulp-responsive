@@ -97,8 +97,14 @@ Configuration unit is an object:
 * name: *String* - filename glob pattern
 * width: *Number* - not set by default
 * height: *Number* - not set by default
-* withoutEnlargement: *Boolean* - default true
+* withoutEnlargement: *Boolean* - default `true`
+* quality: *Number* - output quality for JPEG, WebP and TIFF, default `80`
+* progressive: *Boolean* - progressive (interlace) scan for JPEG and PNG output, default `false`
+* withMetadata: *Boolean* - include image metadata, default `false`
+* compressionLevel: *Number* - zlib compression level for PNG, default `6`
 * rename: *String* - new filename, file will not be renamed by dafault
+
+Detailed description of each option can be found in the [sharp readme](https://github.com/lovell/sharp#image-transformation-options).
 
 #### options
 
