@@ -7,7 +7,7 @@ var prepareConfig = require('../lib/config');
 
 describe('gulp-responsive - config', function() {
 
-  it('should set unspecified default values', function() {
+  it('should set unspecified default value for `withoutEnlargement`', function() {
     var config = prepareConfig([{
       name: 'gulp.png',
       width: 100
@@ -16,6 +16,50 @@ describe('gulp-responsive - config', function() {
     assert.equal(config.length, 1);
     assert.equal(config[0].name, 'gulp.png');
     assert.equal(config[0].withoutEnlargement, true);
+  });
+
+  it('should set unspecified default value for `quality`', function() {
+    var config = prepareConfig([{
+      name: 'gulp.png',
+      width: 100
+    }]);
+
+    assert.equal(config.length, 1);
+    assert.equal(config[0].name, 'gulp.png');
+    assert.equal(config[0].quality, 80);
+  });
+
+  it('should set unspecified default value for `progressive`', function() {
+    var config = prepareConfig([{
+      name: 'gulp.png',
+      width: 100
+    }]);
+
+    assert.equal(config.length, 1);
+    assert.equal(config[0].name, 'gulp.png');
+    assert.equal(config[0].progressive, false);
+  });
+
+  it('should set unspecified default value for `compressionLevel`', function() {
+    var config = prepareConfig([{
+      name: 'gulp.png',
+      width: 100
+    }]);
+
+    assert.equal(config.length, 1);
+    assert.equal(config[0].name, 'gulp.png');
+    assert.equal(config[0].compressionLevel, 6);
+  });
+
+  it('should set unspecified default value for `withMetadata`', function() {
+    var config = prepareConfig([{
+      name: 'gulp.png',
+      width: 100
+    }]);
+
+    assert.equal(config.length, 1);
+    assert.equal(config[0].name, 'gulp.png');
+    assert.equal(config[0].withMetadata, false);
   });
 
   it('should parse config object', function() {

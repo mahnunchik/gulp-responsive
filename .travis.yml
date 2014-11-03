@@ -9,6 +9,7 @@ deploy:
   on:
     branch: master
     tags: true
+    all_branches: true
     repo: mahnunchik/gulp-responsive
 before_install:
   - curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | sudo bash -
