@@ -62,6 +62,26 @@ describe('gulp-responsive - config', function() {
     assert.equal(config[0].withMetadata, false);
   });
 
+  it('should not override specified values', function() {
+    var config = prepareConfig([{
+      name: 'gulp.png',
+      width: 100,
+      withoutEnlargement: false,
+      quality: 96,
+      progressive: true,
+      compressionLevel: 8,
+      withMetadata: true
+    }]);
+
+    assert.equal(config.length, 1);
+    assert.equal(config[0].name, 'gulp.png');
+    assert.equal(config[0].withoutEnlargement, false);
+    assert.equal(config[0].quality, 96);
+    assert.equal(config[0].progressive, true);
+    assert.equal(config[0].compressionLevel, 8);
+    assert.equal(config[0].withMetadata, true);
+  });
+
   it('should parse config object', function() {
     var config = prepareConfig({
       'gulp.png': {
