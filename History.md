@@ -1,3 +1,8 @@
+1.0.2 / 2014-11-11
+==================
+
+ * add: renaming feature by `rename` module https://www.npmjs.org/package/rename
+
 1.0.1 / 2014-11-03
 ==================
 
