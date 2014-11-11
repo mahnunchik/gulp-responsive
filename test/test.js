@@ -103,7 +103,7 @@ describe('gulp-responsive', function() {
     stream.end();
   });
 
-  it('should provide renamed image', function(cb){
+  it('should provide renamed image when rename is string', function(cb){
     var config = [{
       name: 'gulp.png',
       rename: 'test.png'
@@ -113,6 +113,50 @@ describe('gulp-responsive', function() {
     stream.on('data', function(file) {
       assertFile(file);
       assert.equal(file.path, path.join(__dirname, '/fixtures/', 'test.png'));
+    });
+
+    stream.on('end', function() {
+      cb();
+    });
+
+    stream.write(makeFile('gulp.png'));
+    stream.end();
+  });
+
+  it('should provide renamed image when rename is object', function(cb){
+    var config = [{
+      name: 'gulp.png',
+      rename: {
+        suffix: '-renamed'
+      }
+    }];
+    var stream = responsive(config);
+
+    stream.on('data', function(file) {
+      assertFile(file);
+      assert.equal(file.path, path.join(__dirname, '/fixtures/', 'gulp-renamed.png'));
+    });
+
+    stream.on('end', function() {
+      cb();
+    });
+
+    stream.write(makeFile('gulp.png'));
+    stream.end();
+  });
+
+  it('should provide renamed image when rename is function', function(cb){
+    var config = [{
+      name: 'gulp.png',
+      rename: function(path) {
+        path.basename += '-renamed-by-function';
+      }
+    }];
+    var stream = responsive(config);
+
+    stream.on('data', function(file) {
+      assertFile(file);
+      assert.equal(file.path, path.join(__dirname, '/fixtures/', 'gulp-renamed-by-function.png'));
     });
 
     stream.on('end', function() {
