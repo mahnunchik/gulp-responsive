@@ -102,9 +102,11 @@ Configuration unit is an object:
 * progressive: *Boolean* - progressive (interlace) scan for JPEG and PNG output, default `false`
 * withMetadata: *Boolean* - include image metadata, default `false`
 * compressionLevel: *Number* - zlib compression level for PNG, default `6`
-* rename: *String* - new filename, file will not be renamed by dafault
+* rename: *String* - renaming options, file will not be renamed by dafault
 
 Detailed description of each option can be found in the [sharp readme](https://github.com/lovell/sharp#image-transformation-options).
+
+Renaming is implemented by [rename](https://github.com/popomore/rename) module. Options are correspond options of [gulp-rename](https://github.com/hparra/gulp-rename) module.
 
 #### options
 
