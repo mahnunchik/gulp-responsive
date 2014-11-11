@@ -66,7 +66,7 @@ Configuration can be provided in one of the following formats:
   'logo.png': {
     width: 300,
     height: 200,
-    raname: 'logo@2x.png'
+    rename: 'logo@2x.png'
   },
   'background-*.png': {
     width: 1400,
@@ -81,7 +81,7 @@ Configuration can be provided in one of the following formats:
 {
   'logo.png': [{
       width: 200,
-      raname: 'logo@1x.png'
+      rename: 'logo@1x.png'
     },{
       width: 400,
       rename: 'logo@2x.png'
