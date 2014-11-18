@@ -31,7 +31,7 @@
   "dependencies": {
     "async": "^0.9.0",
     "gulp-util": "^3.0.1",
-    "merge": "^1.2.0",
+    "lodash": "^2.4.1",
     "minimatch": "^1.0.0",
     "rename": "^0.2.3",
     "sharp": "^0.7.1",
