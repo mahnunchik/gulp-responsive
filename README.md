@@ -97,7 +97,7 @@ Configuration unit is an object:
 * name: *String* - filename glob pattern
 * width: *Number* - not set by default
 * height: *Number* - not set by default
-* withoutEnlargement: *Boolean* - default `true`
+* withoutEnlargement: *Boolean* - do not enlarge the output image, default `true`
 * quality: *Number* - output quality for JPEG, WebP and TIFF, default `80`
 * progressive: *Boolean* - progressive (interlace) scan for JPEG and PNG output, default `false`
 * withMetadata: *Boolean* - include image metadata, default `false`
@@ -130,6 +130,15 @@ Type: `boolean`
 Default: `true`
 
 Emit error when image is enlarged.
+
+
+You can specify the following global configuration parameters in the `options` object:
+
+* withoutEnlargement: *Boolean* - do not enlarge the output image
+* quality: *Number* - output quality for JPEG, WebP and TIFF
+* progressive: *Boolean* - progressive (interlace) scan for JPEG and PNG output
+* withMetadata: *Boolean* - include image metadata
+* compressionLevel: *Number* - zlib compression level for PNG
 
 ## License
 
