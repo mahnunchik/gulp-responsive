@@ -29,6 +29,25 @@ describe('gulp-responsive', function() {
       stream.end();
     });
 
+    it('should emit error when image is enlarged by size in percentage', function(cb) {
+      var config = [{
+        name: 'gulp.png',
+        width: '300%',
+        withoutEnlargement: true
+      }];
+      var stream = responsive(config);
+
+      stream.on('error', function(err) {
+        assert(/Image must not be enlarged/.test(err.message));
+        cb();
+      });
+
+      stream.on('data', function(){});
+
+      stream.write(makeFile('gulp.png'));
+      stream.end();
+    });
+
     it('should not emit error when image is enlarged and errorOnEnlargement is false', function(cb) {
       var config = [{
         name: 'gulp.png',

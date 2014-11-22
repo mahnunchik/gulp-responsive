@@ -14,7 +14,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "mocha",
+    "test": "npm run lint && mocha",
     "lint": "jshint lib test"
   },
   "keywords": [
@@ -34,7 +34,7 @@
     "lodash": "^2.4.1",
     "minimatch": "^1.0.0",
     "rename": "^0.2.3",
-    "sharp": "^0.7.1",
+    "sharp": "^0.8.0",
     "through2": "^0.6.3"
   },
   "devDependencies": {
