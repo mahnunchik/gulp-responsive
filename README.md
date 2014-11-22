@@ -33,6 +33,9 @@ gulp.task('default', function () {
     },{
       name: 'background-*.png',
       width: 700
+    },{
+      name: 'cover.png',
+      width: '50%'
     }]))
     .pipe(gulp.dest('dist'));
 });
@@ -95,8 +98,8 @@ Configuration can be provided in one of the following formats:
 Configuration unit is an object:
 
 * name: *String* - filename glob pattern
-* width: *Number* - not set by default
-* height: *Number* - not set by default
+* width: *Number* or *String* - width in pixels or percentage of the original, not set by default
+* height: *Number* or *String* - height in pixels or percentage of the original, not set by default
 * withoutEnlargement: *Boolean* - do not enlarge the output image, default `true`
 * quality: *Number* - output quality for JPEG, WebP and TIFF, default `80`
 * progressive: *Boolean* - progressive (interlace) scan for JPEG and PNG output, default `false`
