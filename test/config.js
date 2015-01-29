@@ -72,7 +72,10 @@ describe('gulp-responsive', function() {
         quality: 96,
         progressive: true,
         compressionLevel: 8,
-        withMetadata: true
+        withMetadata: true,
+        embed: true,
+        background: 'white',
+        flatten: true
       }]);
 
       assert.equal(config.length, 1);
@@ -82,6 +85,9 @@ describe('gulp-responsive', function() {
       assert.equal(config[0].progressive, true);
       assert.equal(config[0].compressionLevel, 8);
       assert.equal(config[0].withMetadata, true);
+      assert.equal(config[0].embed, true);
+      assert.equal(config[0].background, 'white');
+      assert.equal(config[0].flatten, true);
     });
 
     it('should parse config object', function() {
