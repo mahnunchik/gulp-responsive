@@ -105,7 +105,14 @@ Configuration unit is an object:
 * progressive: *Boolean* - progressive (interlace) scan for JPEG and PNG output, default `false`
 * withMetadata: *Boolean* - include image metadata, default `false`
 * compressionLevel: *Number* - zlib compression level for PNG, default `6`
-* rename: *String* - renaming options, file will not be renamed by dafault
+* rename: *String* - renaming options, file will not be renamed by default
+* background: *String* - HTML color or hex color string, not set by default
+* embed: *Boolean* - whether to use [sharp's embed](https://github.com/lovell/sharp#embed) option, default `false`
+* max: *Boolean* - whether to use [sharp's max](https://github.com/lovell/sharp#max) option, default `false`
+* flatten: *Boolean* - whether to use [sharp's flatten](https://github.com/lovell/sharp#flatten) option, default `false`
+* jpeg: *Boolean* - use JPEG format for output image, default `false`
+* webp: *Boolean* - use WebP format for output image, default `false`
+* png: *Boolean* - use PNG format for output image, default `false`
 
 Detailed description of each option can be found in the [sharp readme](https://github.com/lovell/sharp#image-transformation-options).
 
