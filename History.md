@@ -1,3 +1,8 @@
+1.0.7 / 2015-02-16
+==================
+
+* add: `max` option, see [sharp#max](https://github.com/lovell/sharp#max)
+
 1.0.6 / 2015-02-08
 ==================
 
