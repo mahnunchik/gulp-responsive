@@ -72,7 +72,7 @@ describe('gulp-responsive', function() {
 
       assert.equal(config.length, 1);
       assert.equal(config[0].name, 'gulp.png');
-      assert.equal(config[0].max, true);
+      assert.equal(config[0].max, false);
     });
     
     it('should not override specified values', function() {
@@ -84,7 +84,7 @@ describe('gulp-responsive', function() {
         progressive: true,
         compressionLevel: 8,
         withMetadata: true,
-        max: false
+        max: true
       }]);
 
       assert.equal(config.length, 1);
@@ -94,7 +94,7 @@ describe('gulp-responsive', function() {
       assert.equal(config[0].progressive, true);
       assert.equal(config[0].compressionLevel, 8);
       assert.equal(config[0].withMetadata, true);
-      assert.equal(config[0].max, false);
+      assert.equal(config[0].max, true);
     });
 
     it('should parse config object', function() {
@@ -136,7 +136,7 @@ describe('gulp-responsive', function() {
         progressive: true,
         compressionLevel: 5,
         withMetadata: true,
-        max: false
+        max: true
       };
       var config = prepareConfig([{
         name: 'gulp.png'
@@ -149,7 +149,7 @@ describe('gulp-responsive', function() {
       assert.equal(config[0].progressive, true);
       assert.equal(config[0].compressionLevel, 5);
       assert.equal(config[0].withMetadata, true);
-      assert.equal(config[0].max, false);
+      assert.equal(config[0].max, true);
     });
 
     it('should not override values specified per file', function () {
@@ -159,7 +159,7 @@ describe('gulp-responsive', function() {
         progressive: false,
         compressionLevel: 5,
         withMetadata: false,
-        max: false
+        max: true
       };
       var config = prepareConfig([{
         name: 'gulp.png',
@@ -169,7 +169,7 @@ describe('gulp-responsive', function() {
         progressive: true,
         compressionLevel: 8,
         withMetadata: true,
-        max: true
+        max: false
       }], globalConfig);
 
       assert.equal(config.length, 1);
@@ -179,7 +179,7 @@ describe('gulp-responsive', function() {
       assert.equal(config[0].progressive, true);
       assert.equal(config[0].compressionLevel, 8);
       assert.equal(config[0].withMetadata, true);
-      assert.equal(config[0].max, true);
+      assert.equal(config[0].max, false);
     });
   });
 });
