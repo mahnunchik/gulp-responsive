@@ -1,12 +1,12 @@
 {
   "name": "gulp-responsive",
-  "version": "1.0.7",
+  "version": "1.1.0",
   "description": "gulp responsive images",
   "main": "lib",
   "license": "MIT",
   "repository": "mahnunchik/gulp-responsive",
   "author": {
-    "name": "Eugeny Vlasenko",
+    "name": "Evgeny Vlasenko",
     "email": "mahnunchik@gmail.com",
     "url": "https://github.com/mahnunchik"
   },

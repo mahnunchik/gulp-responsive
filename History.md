@@ -1,3 +1,10 @@
+1.1.0 / 2015-05-24
+==================
+
+* add: `passThroughUnused` option to pass through unmatched files
+* rename: options `strictMatchConfig` to `errorOnUnusedConfig` and `strictMatchImages` to `errorOnUnusedImage`
+* deps: sharp@^0.10.0, rename@^1.0.3, async@^1.0.0
+
 1.0.7 / 2015-02-16
 ==================
 
