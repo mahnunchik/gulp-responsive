@@ -114,14 +114,14 @@ Renaming is implemented by [rename](https://github.com/popomore/rename) module. 
 
 #### options
 
-##### strictMatchConfig
+##### errorOnUnusedConfig
 
 Type: `boolean`  
 Default: `true`
 
 Emit error when configuration is not used.
 
-##### strictMatchImages
+##### errorOnUnusedImage
 
 Type: `boolean`  
 Default: `true`
