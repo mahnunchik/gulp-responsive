@@ -168,4 +168,52 @@ describe('gulp-responsive', function() {
     stream.end();
   });
 
+  it('should not pass through unmached file by default when `errorOnUnusedImage` is false', function(cb){
+    var stream = responsive({}, {
+      errorOnUnusedImage: false
+    });
+
+    var counter = 0;
+
+    stream.on('data', function() {
+      counter++;
+    });
+
+    stream.on('end', function() {
+      assert.equal(counter, 0);
+      cb();
+    });
+
+    stream.write(makeFile('gulp.png'));
+    stream.end();
+  });
+
+  it('should pass through unmached file when `passThroughUnused` is true and `errorOnUnusedImage` is false', function(cb){
+    var expectedFile = makeFile('gulp.png');
+
+    var stream = responsive({}, {
+      errorOnUnusedImage: false,
+      passThroughUnused: true
+    });
+
+    var counter = 0;
+
+    stream.on('data', function(file) {
+      counter++;
+      if (counter > 1) {
+        throw new Error('more than two files are provided');
+      }
+      assertFile(file);
+      assert.deepEqual(file, expectedFile);
+    });
+
+    stream.on('end', function() {
+      assert.equal(counter, 1);
+      cb();
+    });
+
+    stream.write(expectedFile);
+    stream.end();
+  });
+
 });
