@@ -71,7 +71,7 @@ describe('gulp-responsive', function() {
     });
   });
 
-  describe('strictMatchConfig', function() {
+  describe('errorOnUnusedConfig', function() {
 
     it('should emit error when config not used', function(cb) {
       var config = [{
@@ -92,7 +92,7 @@ describe('gulp-responsive', function() {
       stream.end();
     });
 
-    it('should not emit error when config not used and strictMatchConfig is false', function(cb) {
+    it('should not emit error when config not used and `strictMatchConfig` is false', function(cb) {
       var config = [{
         name: 'gulp.png'
       },{
@@ -113,9 +113,31 @@ describe('gulp-responsive', function() {
       stream.write(makeFile('gulp.png'));
       stream.end();
     });
+
+    it('should not emit error when config not used and `errorOnUnusedConfig` is false', function(cb) {
+      var config = [{
+        name: 'gulp.png'
+      },{
+        name: 'notused.png'
+      }];
+      var stream = responsive(config, {
+        errorOnUnusedConfig: false
+      });
+
+      stream.on('error', function(err) {
+        throw err;
+      });
+
+      stream.on('end', cb);
+
+      stream.on('data', function(){});
+
+      stream.write(makeFile('gulp.png'));
+      stream.end();
+    });
   });
 
-  describe('strictMatchImages', function() {
+  describe('errorOnUnusedImage', function() {
 
     it('should emit error when image not used', function(cb) {
       var config = [{
@@ -136,7 +158,7 @@ describe('gulp-responsive', function() {
       stream.end();
     });
 
-    it('should not emit error when image not used and strictMatchImages is false', function(cb) {
+    it('should not emit error when image not used and `strictMatchImages` is false', function(cb) {
       var config = [{
         name: 'gulp.png'
       }];
@@ -156,7 +178,27 @@ describe('gulp-responsive', function() {
       stream.write(makeFile('unused.png', 'gulp.png'));
       stream.end();
     });
-  });
 
+    it('should not emit error when image not used and `errorOnUnusedImage` is false', function(cb) {
+      var config = [{
+        name: 'gulp.png'
+      }];
+      var stream = responsive(config, {
+        errorOnUnusedImage: false
+      });
+
+      stream.on('error', function(err) {
+        throw err;
+      });
+
+      stream.on('end', cb);
+
+      stream.on('data', function(){});
+
+      stream.write(makeFile('gulp.png'));
+      stream.write(makeFile('unused.png', 'gulp.png'));
+      stream.end();
+    });
+  });
 
 });
