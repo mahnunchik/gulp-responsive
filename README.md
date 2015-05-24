@@ -106,7 +106,7 @@ Configuration unit is an object:
 * progressive: *Boolean* - progressive (interlace) scan for JPEG and PNG output, default `false`
 * withMetadata: *Boolean* - include image metadata, default `false`
 * compressionLevel: *Number* - zlib compression level for PNG, default `6`
-* rename: *String* - renaming options, file will not be renamed by dafault
+* rename: *String*, *Object* or *Function* - renaming options, file will not be renamed by dafault
 
 Detailed description of each option can be found in the [sharp readme](https://github.com/lovell/sharp#image-transformation-options).
 

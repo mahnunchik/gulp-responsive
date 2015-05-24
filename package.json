@@ -29,12 +29,12 @@
     "scrset"
   ],
   "dependencies": {
-    "async": "^0.9.0",
+    "async": "^1.0.0",
     "gulp-util": "^3.0.1",
     "lodash": "^3.0.0",
     "minimatch": "^2.0.1",
-    "rename": "^0.2.3",
-    "sharp": "^0.9.0",
+    "rename": "^1.0.3",
+    "sharp": "^0.10.0",
     "through2": "^0.6.3"
   },
   "devDependencies": {

@@ -150,6 +150,7 @@ describe('gulp-responsive', function() {
       name: 'gulp.png',
       rename: function(path) {
         path.basename += '-renamed-by-function';
+        return path;
       }
     }];
     var stream = responsive(config);
