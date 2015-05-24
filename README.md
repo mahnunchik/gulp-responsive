@@ -128,6 +128,14 @@ Default: `true`
 
 Emit error when image is not used.
 
+##### passThroughUnused
+
+Type: `boolean`  
+Default: `false`
+
+Keep unmatched images in the stream.
+To use this option `errorOnUnusedImage` should be `false`.
+
 ##### errorOnEnlargement
 
 Type: `boolean`  
