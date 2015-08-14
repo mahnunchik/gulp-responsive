@@ -216,4 +216,44 @@ describe('gulp-responsive', function() {
     stream.end();
   });
 
+  it('should pass through original files when `passThroughOriginals` is true', function(cb){
+    var expectedFile = makeFile('gulp.png');
+
+    var stream = responsive({
+      '**/*': [{
+          width: 100,
+          rename: function (path) {
+            path.dirname += '/100';
+            return path;
+          }
+        }]
+    }, {
+      passThroughOriginals: true
+    });
+
+    var counter = 0;
+
+    stream.on('data', function(file) {
+      counter++;
+      if (counter > 2) {
+        throw new Error('more than two files are provided');
+      }
+      assertFile(file);
+      if (file.path.indexOf('/100/') >= 0) {
+        assert.equal(file.path, path.join(__dirname, '/fixtures/100/gulp.png'));
+        assert.notDeepEqual(file, expectedFile);
+      } else {
+        assert.deepEqual(file, expectedFile);
+      }
+    });
+
+    stream.on('end', function() {
+      assert.equal(counter, 2);
+      cb();
+    });
+
+    stream.write(expectedFile);
+    stream.end();
+  });
+
 });
