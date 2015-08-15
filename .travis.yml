@@ -11,11 +11,9 @@ deploy:
   provider: npm
   email: mahnunchik@gmail.com
   api_key:
-    secure: dToBKY9QRznavUUBBcttoOKbLV2vGB8AxHUhGT8YbujkI7wPM4lyJv0VYlGOUdOL4F7D8WeP+aIB4n7YNqHOWxi+XfGjC6Qpw+GlwL00ZBzbbQBhUshJq00Wq8SVfrAZcYQXwVM969cw8EaiRfAGIlSKdzv59B4pJGzhj2holNs=
+    secure: fGFoD2S5JYeeLNalPNY49Jf7wUW8FNNxPs/2BeSmnikUotE/bzPpIsCrqsW0XyFAtNKjeV9AVI5zE5AKaJcwy2/uGvUK/q7ql3WG+YlIGwXME/HJvAocNql8+RXWBxDKbXXaJ15HSlWEkuTG/ixG2qUpMrZRDXD9EbTBVTOSLJM=
   on:
-    branch: master
     tags: true
-    all_branches: true
     repo: mahnunchik/gulp-responsive
 before_install:
   - curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | sudo bash -
