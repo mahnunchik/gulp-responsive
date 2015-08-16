@@ -144,16 +144,6 @@ Default: `true`
 
 Emit error when image is enlarged.
 
-##### passThroughOriginals
-
-Type: `boolean`  
-Default: `false`
-
-Keep the original images in the stream whether they're also resized or not. Can be useful in combination with 
-`withoutEnlargement`, `errorOnEnlargement` and `skipOnEnlargement` all set to `true`, to generate sets of resized images 
-that are never larger than their corresponding original images, and where the original images are of various sizes.
-
-
 
 You can specify the following global configuration parameters in the `options` object:
 
