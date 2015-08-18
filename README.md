@@ -101,6 +101,7 @@ Configuration unit is an object:
 * width: *Number* or *String* - width in pixels or percentage of the original, not set by default
 * height: *Number* or *String* - height in pixels or percentage of the original, not set by default
 * withoutEnlargement: *Boolean* - do not enlarge the output image, default `true`
+* skipOnEnlargement: *Boolean* - do not write an output image at all if the original image is smaller than the configured width or height, default `false`
 * max: *Boolean* - resize to the max width or height the preserving aspect ratio (both width and height have to be defined), default `false`
 * quality: *Number* - output quality for JPEG, WebP and TIFF, default `80`
 * progressive: *Boolean* - progressive (interlace) scan for JPEG and PNG output, default `false`
@@ -147,6 +148,7 @@ Emit error when image is enlarged.
 You can specify the following global configuration parameters in the `options` object:
 
 * withoutEnlargement: *Boolean* - do not enlarge the output image
+* skipOnEnlargement: *Boolean* - do not write an output image at all if the original image is smaller than the configured width or height
 * quality: *Number* - output quality for JPEG, WebP and TIFF
 * progressive: *Boolean* - progressive (interlace) scan for JPEG and PNG output
 * withMetadata: *Boolean* - include image metadata
