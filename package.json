@@ -1,6 +1,6 @@
 {
   "name": "gulp-responsive",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "gulp responsive images",
   "main": "lib",
   "license": "MIT",
