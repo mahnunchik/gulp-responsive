@@ -216,4 +216,27 @@ describe('gulp-responsive', function() {
     stream.end();
   });
 
+  it('should skip enlarged image when `skipOnEnlargement` is true', function(cb){
+    var config = [{
+      name: 'gulp.png',
+      width: 10000
+    }];
+
+    var stream = responsive(config, {
+      errorOnEnlargement: false,
+      skipOnEnlargement: true
+    });
+
+    stream.on('data', function() {
+      throw new Error('enlarged image not been skipped');
+    });
+
+    stream.on('end', function() {
+      cb();
+    });
+
+    stream.write(makeFile('gulp.png'));
+    stream.end();
+  });
+
 });
