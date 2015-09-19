@@ -4,9 +4,11 @@ node_js:
   - '0.12'
   - iojs-v2
   - iojs-v3
+  - '4'
 matrix:
   allow_failures:
     - node_js: iojs-v3
+    - node_js: '4'
 deploy:
   provider: npm
   email: mahnunchik@gmail.com
