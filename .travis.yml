@@ -1,14 +1,7 @@
 language: node_js
 node_js:
-  - '0.10'
   - '0.12'
-  - iojs-v2
-  - iojs-v3
-  - '4'
-matrix:
-  allow_failures:
-    - node_js: iojs-v3
-    - node_js: '4'
+  - '4.2'
 deploy:
   provider: npm
   email: mahnunchik@gmail.com
@@ -17,5 +10,3 @@ deploy:
   on:
     tags: true
     repo: mahnunchik/gulp-responsive
-before_install:
-  - curl -s https://raw.githubusercontent.com/lovell/sharp/master/preinstall.sh | sudo bash -
