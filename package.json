@@ -34,7 +34,7 @@
     "lodash": "^3.0.0",
     "minimatch": "^3.0.0",
     "rename": "^1.0.3",
-    "sharp": "lovell/sharp#look",
+    "sharp": "^0.12.0",
     "through2": "^2.0.0"
   },
   "devDependencies": {
