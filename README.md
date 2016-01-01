@@ -8,7 +8,7 @@
 
 `gulp-responsive` depends on [sharp](https://github.com/lovell/sharp). Sharp is one of the fastest Node libraries for resizing JPEG, PNG, WebP and TIFF images. 
 
-Before installing `gulp-responsive` you should install the [libvips](https://github.com/jcupitt/libvips) library. Further information and instructions can be found in the [sharp readme](https://github.com/lovell/sharp#installation).
+Before installing `gulp-responsive` you should install the [libvips](https://github.com/jcupitt/libvips) library. Further information and instructions can be found in the [sharp installation guide](http://sharp.dimens.io/en/stable/install/).
 
 ```sh
 $ npm install --save-dev gulp-responsive
@@ -109,7 +109,7 @@ Configuration unit is an object:
 * compressionLevel: *Number* - zlib compression level for PNG, default `6`
 * rename: *String*, *Object* or *Function* - renaming options, file will not be renamed by dafault
 
-Detailed description of each option can be found in the [sharp readme](https://github.com/lovell/sharp#image-transformation-options).
+Detailed description of each option can be found in the [sharp API documentation](http://sharp.dimens.io/en/stable/api/).
 
 Renaming is implemented by [rename](https://github.com/popomore/rename) module. Options are correspond options of [gulp-rename](https://github.com/hparra/gulp-rename) module.
 
