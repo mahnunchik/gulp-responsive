@@ -173,4 +173,4 @@ You can specify the following global configuration parameters in the `options` o
 
 ## License
 
-MIT © [Eugeny Vlasenko](https://github.com/mahnunchik)
+MIT © [Evgeny Vlasenko](https://github.com/mahnunchik)
