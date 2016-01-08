@@ -92,28 +92,6 @@ describe('gulp-responsive', function() {
       stream.end();
     });
 
-    it('should not emit error when config not used and `strictMatchConfig` is false', function(cb) {
-      var config = [{
-        name: 'gulp.png'
-      },{
-        name: 'notused.png'
-      }];
-      var stream = responsive(config, {
-        strictMatchConfig: false
-      });
-
-      stream.on('error', function(err) {
-        throw err;
-      });
-
-      stream.on('end', cb);
-
-      stream.on('data', function(){});
-
-      stream.write(makeFile('gulp.png'));
-      stream.end();
-    });
-
     it('should not emit error when config not used and `errorOnUnusedConfig` is false', function(cb) {
       var config = [{
         name: 'gulp.png'
@@ -155,27 +133,6 @@ describe('gulp-responsive', function() {
       stream.on('data', function(){});
 
       stream.write(makeFile('gulp.png'));
-      stream.end();
-    });
-
-    it('should not emit error when image not used and `strictMatchImages` is false', function(cb) {
-      var config = [{
-        name: 'gulp.png'
-      }];
-      var stream = responsive(config, {
-        strictMatchImages: false
-      });
-
-      stream.on('error', function(err) {
-        throw err;
-      });
-
-      stream.on('end', cb);
-
-      stream.on('data', function(){});
-
-      stream.write(makeFile('gulp.png'));
-      stream.write(makeFile('unused.png', 'gulp.png'));
       stream.end();
     });
 
