@@ -108,7 +108,7 @@ Configuration unit is an object:
 * progressive: *Boolean* — progressive (interlace) scan for JPEG and PNG output, default `false`
 * withMetadata: *Boolean* — include image metadata, default `false`
 * compressionLevel: *Number* — zlib compression level for PNG, default `6`
-* rename: *String*, *Object* or *Function* — renaming options, file will not be renamed by dafault
+* rename: *String*, *Object* or *Function* — renaming options, file will not be renamed by default. When `extname` is specified, output format is parsed from extension. You can override this autodetection with `format` option.
 * format: *String* — output format `jpeg`, `png`, `webp` or `raw`, default is `null`
 * crop: Crop the resized image to the exact size specified, default is `false`
 * embed: Preserving aspect ratio, resize the image to the maximum `width` or `height` specified then `embed` on a `background` of the exact `width` and `height` specified, default is `false`
