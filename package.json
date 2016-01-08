@@ -38,6 +38,7 @@
     "through2": "^2.0.0"
   },
   "devDependencies": {
+    "file-type": "^3.4.0",
     "jshint": "^2.5.10",
     "mocha": "^2.0.1"
   }

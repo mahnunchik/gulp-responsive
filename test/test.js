@@ -11,20 +11,20 @@ var helpers = require('./helpers');
 var makeFile = helpers.makeFile;
 var assertFile = helpers.assertFile;
 
-describe('gulp-responsive', function() {
+describe('gulp-responsive', function () {
 
-  it('should not do anything without images and configs', function(cb) {
+  it('should not do anything without images and configs', function (cb) {
     var stream = responsive();
 
     stream.on('end', cb);
-    stream.on('data', function(){
+    stream.on('data', function () {
       throw new Error('data should not be provided');
     });
 
     stream.end();
   });
 
-  it('should provide one image when exactly one image and one config are provided', function(cb){
+  it('should provide one image when exactly one image and one config are provided', function (cb) {
     var config = [{
       name: 'gulp.png'
     }];
@@ -32,7 +32,7 @@ describe('gulp-responsive', function() {
 
     var counter = 0;
 
-    stream.on('data', function(file) {
+    stream.on('data', function (file) {
       counter++;
       assertFile(file);
       if (counter > 1) {
@@ -40,7 +40,7 @@ describe('gulp-responsive', function() {
       }
     });
 
-    stream.on('end', function() {
+    stream.on('end', function () {
       assert.equal(counter, 1);
       cb();
     });
@@ -49,7 +49,7 @@ describe('gulp-responsive', function() {
     stream.end();
   });
 
-  it('should provide two image when one image and exactly two configs are provided', function(cb){
+  it('should provide two image when one image and exactly two configs are provided', function (cb) {
     var config = [{
       name: 'gulp.png'
     },{
@@ -59,7 +59,7 @@ describe('gulp-responsive', function() {
 
     var counter = 0;
 
-    stream.on('data', function(file) {
+    stream.on('data', function (file) {
       counter++;
       assertFile(file);
       if (counter > 2) {
@@ -67,7 +67,7 @@ describe('gulp-responsive', function() {
       }
     });
 
-    stream.on('end', function() {
+    stream.on('end', function () {
       assert.equal(counter, 2);
       cb();
     });
@@ -76,7 +76,7 @@ describe('gulp-responsive', function() {
     stream.end();
   });
 
-  it('should provide two image when one image match two configs', function(cb){
+  it('should provide two image when one image match two configs', function (cb) {
     var config = [{
       name: 'gulp.png'
     },{
@@ -86,7 +86,7 @@ describe('gulp-responsive', function() {
 
     var counter = 0;
 
-    stream.on('data', function(file) {
+    stream.on('data', function (file) {
       counter++;
       assertFile(file);
       if (counter > 2) {
@@ -94,7 +94,7 @@ describe('gulp-responsive', function() {
       }
     });
 
-    stream.on('end', function() {
+    stream.on('end', function () {
       assert.equal(counter, 2);
       cb();
     });
@@ -103,140 +103,146 @@ describe('gulp-responsive', function() {
     stream.end();
   });
 
-  it('should provide renamed image when rename is string', function(cb){
-    var config = [{
-      name: 'gulp.png',
-      rename: 'test.png'
-    }];
-    var stream = responsive(config);
+  describe('rename image', function () {
 
-    stream.on('data', function(file) {
-      assertFile(file);
-      assert.equal(file.path, path.join(__dirname, '/fixtures/', 'test.png'));
+    it('should provide renamed image when rename is string', function (cb) {
+      var config = [{
+        name: 'gulp.png',
+        rename: 'test.png'
+      }];
+      var stream = responsive(config);
+
+      stream.on('data', function (file) {
+        assertFile(file);
+        assert.equal(file.path, path.join(__dirname, '/fixtures/', 'test.png'));
+      });
+
+      stream.on('end', function () {
+        cb();
+      });
+
+      stream.write(makeFile('gulp.png'));
+      stream.end();
     });
 
-    stream.on('end', function() {
-      cb();
+    it('should provide renamed image when rename is object', function (cb) {
+      var config = [{
+        name: 'gulp.png',
+        rename: {
+          suffix: '-renamed'
+        }
+      }];
+      var stream = responsive(config);
+
+      stream.on('data', function (file) {
+        assertFile(file);
+        assert.equal(file.path, path.join(__dirname, '/fixtures/', 'gulp-renamed.png'));
+      });
+
+      stream.on('end', function () {
+        cb();
+      });
+
+      stream.write(makeFile('gulp.png'));
+      stream.end();
     });
 
-    stream.write(makeFile('gulp.png'));
-    stream.end();
+    it('should provide renamed image when rename is function', function (cb) {
+      var config = [{
+        name: 'gulp.png',
+        rename: function (path) {
+          path.basename += '-renamed-by-function';
+          return path;
+        }
+      }];
+      var stream = responsive(config);
+
+      stream.on('data', function (file) {
+        assertFile(file);
+        assert.equal(file.path, path.join(__dirname, '/fixtures/', 'gulp-renamed-by-function.png'));
+      });
+
+      stream.on('end', function () {
+        cb();
+      });
+
+      stream.write(makeFile('gulp.png'));
+      stream.end();
+    });
+
   });
 
-  it('should provide renamed image when rename is object', function(cb){
-    var config = [{
-      name: 'gulp.png',
-      rename: {
-        suffix: '-renamed'
-      }
-    }];
-    var stream = responsive(config);
+  describe('unmached/unused images', function () {
 
-    stream.on('data', function(file) {
-      assertFile(file);
-      assert.equal(file.path, path.join(__dirname, '/fixtures/', 'gulp-renamed.png'));
+    it('should not pass through unmached file by default when `errorOnUnusedImage` is false', function (cb) {
+      var stream = responsive({}, {
+        errorOnUnusedImage: false
+      });
+
+      var counter = 0;
+
+      stream.on('data', function () {
+        counter++;
+      });
+
+      stream.on('end', function () {
+        assert.equal(counter, 0);
+        cb();
+      });
+
+      stream.write(makeFile('gulp.png'));
+      stream.end();
     });
 
-    stream.on('end', function() {
-      cb();
+    it('should pass through unmached file when `passThroughUnused` is true and `errorOnUnusedImage` is false', function (cb) {
+      var expectedFile = makeFile('gulp.png');
+
+      var stream = responsive({}, {
+        errorOnUnusedImage: false,
+        passThroughUnused: true
+      });
+
+      var counter = 0;
+
+      stream.on('data', function (file) {
+        counter++;
+        if (counter > 1) {
+          throw new Error('more than two files are provided');
+        }
+        assertFile(file);
+        assert.deepEqual(file, expectedFile);
+      });
+
+      stream.on('end', function () {
+        assert.equal(counter, 1);
+        cb();
+      });
+
+      stream.write(expectedFile);
+      stream.end();
     });
 
-    stream.write(makeFile('gulp.png'));
-    stream.end();
+    it('should skip enlarged image when `skipOnEnlargement` is true', function (cb){
+      var config = [{
+        name: 'gulp.png',
+        width: 10000
+      }];
+
+      var stream = responsive(config, {
+        errorOnEnlargement: false,
+        skipOnEnlargement: true
+      });
+
+      stream.on('data', function () {
+        throw new Error('enlarged image not been skipped');
+      });
+
+      stream.on('end', function () {
+        cb();
+      });
+
+      stream.write(makeFile('gulp.png'));
+      stream.end();
+    });
   });
-
-  it('should provide renamed image when rename is function', function(cb){
-    var config = [{
-      name: 'gulp.png',
-      rename: function(path) {
-        path.basename += '-renamed-by-function';
-        return path;
-      }
-    }];
-    var stream = responsive(config);
-
-    stream.on('data', function(file) {
-      assertFile(file);
-      assert.equal(file.path, path.join(__dirname, '/fixtures/', 'gulp-renamed-by-function.png'));
-    });
-
-    stream.on('end', function() {
-      cb();
-    });
-
-    stream.write(makeFile('gulp.png'));
-    stream.end();
-  });
-
-  it('should not pass through unmached file by default when `errorOnUnusedImage` is false', function(cb){
-    var stream = responsive({}, {
-      errorOnUnusedImage: false
-    });
-
-    var counter = 0;
-
-    stream.on('data', function() {
-      counter++;
-    });
-
-    stream.on('end', function() {
-      assert.equal(counter, 0);
-      cb();
-    });
-
-    stream.write(makeFile('gulp.png'));
-    stream.end();
-  });
-
-  it('should pass through unmached file when `passThroughUnused` is true and `errorOnUnusedImage` is false', function(cb){
-    var expectedFile = makeFile('gulp.png');
-
-    var stream = responsive({}, {
-      errorOnUnusedImage: false,
-      passThroughUnused: true
-    });
-
-    var counter = 0;
-
-    stream.on('data', function(file) {
-      counter++;
-      if (counter > 1) {
-        throw new Error('more than two files are provided');
-      }
-      assertFile(file);
-      assert.deepEqual(file, expectedFile);
-    });
-
-    stream.on('end', function() {
-      assert.equal(counter, 1);
-      cb();
-    });
-
-    stream.write(expectedFile);
-    stream.end();
-  });
-
-  it('should skip enlarged image when `skipOnEnlargement` is true', function(cb){
-    var config = [{
-      name: 'gulp.png',
-      width: 10000
-    }];
-
-    var stream = responsive(config, {
-      errorOnEnlargement: false,
-      skipOnEnlargement: true
-    });
-
-    stream.on('data', function() {
-      throw new Error('enlarged image not been skipped');
-    });
-
-    stream.on('end', function() {
-      cb();
-    });
-
-    stream.write(makeFile('gulp.png'));
-    stream.end();
-  });
-
 });
