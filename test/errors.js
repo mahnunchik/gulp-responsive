@@ -158,4 +158,23 @@ describe('gulp-responsive', function() {
     });
   });
 
+  describe('unsupported image format', function() {
+    it('should emit error if image format is unsupported', function (cb) {
+      var config = [{
+        name: 'unsupported.png'
+      }];
+      var stream = responsive(config);
+
+      stream.on('error', function(err) {
+        assert(/File `unsupported.png`/.test(err.message));
+        cb();
+      });
+
+      stream.on('data', function(){});
+
+      stream.write(makeFile('unsupported.png', '../../README.md'));
+      stream.end();
+    });
+  });
+
 });
