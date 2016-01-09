@@ -19,7 +19,7 @@ describe('gulp-responsive', function() {
       var stream = responsive(config);
 
       stream.on('error', function(err) {
-        assert(/Image must not be enlarged/.test(err.message));
+        assert(/Image is enlarged/.test(err.message));
         cb();
       });
 
@@ -38,7 +38,7 @@ describe('gulp-responsive', function() {
       var stream = responsive(config);
 
       stream.on('error', function(err) {
-        assert(/Image must not be enlarged/.test(err.message));
+        assert(/Image is enlarged/.test(err.message));
         cb();
       });
 
@@ -82,7 +82,7 @@ describe('gulp-responsive', function() {
       var stream = responsive(config);
 
       stream.on('error', function(err) {
-        assert(/Available images do not match following config/.test(err.message));
+        assert(/Available images do not match the following config/.test(err.message));
         cb();
       });
 
@@ -126,7 +126,7 @@ describe('gulp-responsive', function() {
       var stream = responsive(config);
 
       stream.on('error', function(err) {
-        assert(/Available images do not match following config/.test(err.message));
+        assert(/Available images do not match the following config/.test(err.message));
         cb();
       });
 
