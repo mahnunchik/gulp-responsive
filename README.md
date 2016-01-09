@@ -48,6 +48,22 @@ gulp.task('default', function () {
 });
 ```
 
+## [Examples](./examples)
+
+* [Simple example](./examples/simple.md)
+* [Multiple resolutions](./examples/multiple-resolutions.md)
+* [Advanced example](./examples/advanced.md)
+
+### Integration
+
+* [HTML `srcset` attribute](./examples/srcset.md)
+* [HTML `<picture>` element](./examples/picture.md)
+* [CSS `image-set` method](./examples/image-set.md)
+
+### All together :fireworks:
+
+* [`gulp-responsive` config generation example](./examples/gulp-responsive-config.md)
+
 ## API
 
 ### responsive([config](#config), [options](#options))
