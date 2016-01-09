@@ -1,3 +1,12 @@
+2.0.0 / 2016-01-09
+==================
+* Version 2.0 https://github.com/mahnunchik/gulp-responsive/issues/23
+* add: all sharp options 
+* add: better usage examples
+* add: ability to transform format of output image (`format` option)
+* remove: depricated options `strictMatchConfig` and `strictMatchImages`
+* add: visibility to image manipulation process
+
 1.2.1 / 2015-08-18
 ==================
 
