@@ -19,7 +19,7 @@ describe('gulp-responsive', function() {
       var stream = responsive(config);
 
       stream.on('error', function(err) {
-        assert(/Image is enlarged/.test(err.message));
+        assert(/Image enlargement is detected/.test(err.message));
         cb();
       });
 
@@ -38,7 +38,7 @@ describe('gulp-responsive', function() {
       var stream = responsive(config);
 
       stream.on('error', function(err) {
-        assert(/Image is enlarged/.test(err.message));
+        assert(/Image enlargement is detected/.test(err.message));
         cb();
       });
 
