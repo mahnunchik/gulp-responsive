@@ -21,3 +21,4 @@ deploy:
   on:
     tags: true
     repo: mahnunchik/gulp-responsive
+    node: '5'
