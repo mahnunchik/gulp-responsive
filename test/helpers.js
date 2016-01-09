@@ -25,3 +25,8 @@ function assertFile(file) {
 
 exports.makeFile = makeFile;
 exports.assertFile = assertFile;
+
+// Force mute gulp logger in test environment
+if (process.env.NODE_ENV === 'test') {
+  gutil.log = function () {};
+}
