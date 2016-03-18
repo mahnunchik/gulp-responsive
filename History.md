@@ -1,3 +1,13 @@
+2.2.0 / 2016-03-18
+==================
+* add: silent option
+* add: stats option
+
+2.1.0 / 2016-02-18
+==================
+* deps: sharp@0.13.0
+* deps: lodash@4.5
+
 2.0.0 / 2016-01-09
 ==================
 * Version 2.0 https://github.com/mahnunchik/gulp-responsive/issues/23
