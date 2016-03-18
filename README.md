@@ -190,6 +190,20 @@ Default: `true`
 
 Emit the error when image is enlarged.
 
+##### stats
+
+Type: `Boolean`  
+Default: `true`
+
+Show statistics after the run — how many images were created, how many were matched and how many were in the run in total.
+
+##### silent
+
+Type: `Boolean`
+Default: `false`
+
+Silence messages and stats if 0 images were created. If you wish for complete silence, activate `options.silent` and disable `options.stats`.
+
 > You can specify **global default value** for any of [configuration option](#configuration-unit).
 
 ```js
