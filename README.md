@@ -6,7 +6,7 @@
 ## Installation
 
 
-`gulp-responsive` depends on [sharp](https://github.com/lovell/sharp). Sharp is one of the fastest Node.js module for resizing JPEG, PNG, WebP and TIFF images.
+`gulp-responsive` depends on [sharp](https://github.com/lovell/sharp). Sharp is one of the fastest Node.js modules for resizing JPEG, PNG, WebP and TIFF images.
 
 If you are using Mac OS then before installing `gulp-responsive` you should install the [libvips](https://github.com/jcupitt/libvips) library. Further information and instructions can be found in the [sharp installation guide](http://sharp.dimens.io/en/stable/install/).
 
@@ -157,7 +157,7 @@ Configuration unit is an object:
 Detailed description of each option can be found in the [sharp API documentation](http://sharp.dimens.io/en/stable/api/).
 
 ##### Renaming
-Renaming is implemented by [rename](https://www.npmjs.com/package/rename) module. Options are correspond options of [gulp-rename](https://www.npmjs.com/package/gulp-rename) module.
+Renaming is implemented by the [rename](https://www.npmjs.com/package/rename) module. Options correspond with options of [gulp-rename](https://www.npmjs.com/package/gulp-rename).
 
 #### options
 
@@ -199,12 +199,12 @@ Show statistics after the run — how many images were created, how many were ma
 
 ##### silent
 
-Type: `Boolean`
+Type: `Boolean`  
 Default: `false`
 
-Silence messages and stats if 0 images were created. If you wish for complete silence, activate `options.silent` and disable `options.stats`.
+Silence messages and stats if 0 images were created. If you wish to supress all messages and stats, set the `options.stats` to `false` as well.
 
-> You can specify **global default value** for any of [configuration option](#configuration-unit).
+> You can specify **global default value** for any of the [configuration options](#configuration-unit).
 
 ```js
 gulp.task('default', function () {
