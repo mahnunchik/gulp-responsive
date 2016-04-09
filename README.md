@@ -22,7 +22,7 @@ var gulp = require('gulp');
 var responsive = require('gulp-responsive');
 
 gulp.task('default', function () {
-  return gulp.src('src/*.{png,jpg}')
+  return gulp.src(['src/*.{png,jpg}'])
     .pipe(responsive({
       'background-*.jpg': {
         width: 700,
