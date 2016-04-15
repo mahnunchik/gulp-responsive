@@ -1,3 +1,7 @@
+2.3.0 / 2016-04-15
+==================
+* deps: sharp@0.14.0 http://sharp.dimens.io/en/stable/changelog/#v014-needle
+
 2.2.0 / 2016-03-18
 ==================
 * add: silent option
