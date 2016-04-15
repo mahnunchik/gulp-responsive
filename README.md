@@ -151,7 +151,7 @@ Configuration unit is an object:
 * [**gamma**](http://sharp.dimens.io/en/stable/api/#gammagamma): *Boolean* — Apply a gamma correction by reducing the encoding (darken) pre-resize at a factor of `1/gamma` then increasing the encoding (brighten) post-resize at a factor of `gamma`. Default is `false`.
 * [**grayscale**](http://sharp.dimens.io/en/stable/api/#grayscale-greyscale): *Boolean* — Convert to 8-bit greyscale; 256 shades of grey, default is `false`.
 * [**normalize**](http://sharp.dimens.io/en/stable/api/#normalize-normalise): *Boolean* — Enhance output image contrast by stretching its luminance to cover the full dynamic range. This typically reduces performance by 30%. Default is `false`.
-* [**tile**](http://sharp.dimens.io/en/stable/api/#tilesize-overlap): *Boolean* or *Object* — The size and overlap, in pixels, of square Deep Zoom image pyramid tiles, default is `false`.
+* [**tile**](http://sharp.dimens.io/en/stable/api/#tileoptions): *Boolean* or *Object* — The size and overlap, in pixels, of square Deep Zoom image pyramid tiles, default is `false`.
 * [**withoutChromaSubsampling**](http://sharp.dimens.io/en/stable/api/#withoutchromasubsampling): *Boolean* — Disable the use of [chroma subsampling](http://en.wikipedia.org/wiki/Chroma_subsampling) with JPEG output (4:4:4), default is `false`.
 
 Detailed description of each option can be found in the [sharp API documentation](http://sharp.dimens.io/en/stable/api/).
