@@ -1,3 +1,8 @@
+2.4.0 / 2016-06-01
+==================
+* deps: sharp@0.15.0 http://sharp.dimens.io/en/stable/changelog/#v015-outfit
+* breaking: Existing sharpen API to accept sigma
+
 2.3.0 / 2016-04-15
 ==================
 * deps: sharp@0.14.0 http://sharp.dimens.io/en/stable/changelog/#v014-needle
