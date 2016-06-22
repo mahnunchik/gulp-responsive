@@ -43,7 +43,7 @@ gulp.task('default', function () {
           rename: 'logo@2x.png'
         }
       ]
-    ))
+    }))
     .pipe(gulp.dest('dist'));
 });
 ```
