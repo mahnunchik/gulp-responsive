@@ -38,6 +38,12 @@ describe('gulp-responsive', function() {
       assert(_.isNumber(test));
     });
 
+    it('should recognize percentages and calculate size (more then 100%)', function() {
+      var test = size('200%', 900);
+      assert.equal(test, 1800);
+      assert(_.isNumber(test));
+    });
+
     it('should throw an error on wrong input', function() {
       assert.throws(function() {
         size('wrong');
