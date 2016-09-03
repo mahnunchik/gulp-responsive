@@ -49,6 +49,33 @@ describe('gulp-responsive', function () {
     stream.end();
   });
 
+
+    it('should support source file in SVG format', function (cb) {
+      var config = [{
+        name: 'gulp.svg',
+        format: 'png'
+      }];
+      var stream = responsive(config);
+
+      var counter = 0;
+
+      stream.on('data', function (file) {
+        counter++;
+        assertFile(file);
+        if (counter > 1) {
+          throw new Error('more than one file is provided');
+        }
+      });
+
+      stream.on('end', function () {
+        assert.equal(counter, 1);
+        cb();
+      });
+
+      stream.write(makeFile('gulp.svg'));
+      stream.end();
+    });
+
   it('should provide two image when one image and exactly two configs are provided', function (cb) {
     var config = [{
       name: 'gulp.png'
