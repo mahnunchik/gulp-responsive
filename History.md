@@ -1,3 +1,9 @@
+2.6.0 / 2016-09-15
+==================
+* add: `kernel` option
+* rename: `interpolation` to `interpolator` option
+* deprecate: `interpolation` option
+
 2.5.0 / 2016-06-01
 ==================
 * deps: sharp@0.16.0 http://sharp.dimens.io/en/stable/changelog/#v016-pencil
