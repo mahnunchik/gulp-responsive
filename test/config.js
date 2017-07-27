@@ -42,6 +42,7 @@ describe('gulp-responsive', function () {
       assert.equal(config[0].quality, 80);
       assert.equal(config[0].progressive, false);
       assert.equal(config[0].withMetadata, false);
+      assert.equal(config[0].trim, false);
       assert.equal(config[0].tile, false);
       assert.equal(config[0].withoutChromaSubsampling, false);
       assert.equal(config[0].compressionLevel, 6);
