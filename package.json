@@ -44,6 +44,6 @@
   "devDependencies": {
     "file-type": "^4.0.0",
     "jshint": "^2.5.10",
-    "mocha": "^3.0.2"
+    "mocha": "^4.0.0"
   }
 }
