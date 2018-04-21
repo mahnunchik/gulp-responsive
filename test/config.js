@@ -23,7 +23,6 @@ describe('gulp-responsive', function () {
       assert.equal(config[0].withoutEnlargement, true);
       assert.equal(config[0].skipOnEnlargement, false);
       assert.equal(config[0].ignoreAspectRatio, false);
-      assert.equal(config[0].interpolator, 'bicubic');
       assert.equal(config[0].kernel, 'lanczos3');
       assert.equal(config[0].extractBeforeResize, false);
       assert.equal(config[0].extractAfterResize, false);
@@ -60,7 +59,6 @@ describe('gulp-responsive', function () {
         withoutEnlargement: 'test',
         skipOnEnlargement: 'test',
         ignoreAspectRatio: 'test',
-        interpolator: 'test',
         kernel: 'test',
         extractBeforeResize: 'test',
         extractAfterResize: 'test',
@@ -94,7 +92,6 @@ describe('gulp-responsive', function () {
       assert.equal(config[0].withoutEnlargement, 'test');
       assert.equal(config[0].skipOnEnlargement, 'test');
       assert.equal(config[0].ignoreAspectRatio, 'test');
-      assert.equal(config[0].interpolator, 'test');
       assert.equal(config[0].kernel, 'test');
       assert.equal(config[0].extractBeforeResize, 'test');
       assert.equal(config[0].extractAfterResize, 'test');
@@ -179,7 +176,6 @@ describe('gulp-responsive', function () {
         withoutEnlargement: 'test',
         skipOnEnlargement: 'test',
         ignoreAspectRatio: 'test',
-        interpolator: 'test',
         kernel: 'test',
         extractBeforeResize: 'test',
         extractAfterResize: 'test',
@@ -216,7 +212,6 @@ describe('gulp-responsive', function () {
       assert.equal(config[0].withoutEnlargement, 'test');
       assert.equal(config[0].skipOnEnlargement, 'test');
       assert.equal(config[0].ignoreAspectRatio, 'test');
-      assert.equal(config[0].interpolator, 'test');
       assert.equal(config[0].kernel, 'test');
       assert.equal(config[0].extractBeforeResize, 'test');
       assert.equal(config[0].extractAfterResize, 'test');
@@ -250,7 +245,6 @@ describe('gulp-responsive', function () {
         withoutEnlargement: 'global',
         skipOnEnlargement: 'global',
         ignoreAspectRatio: 'global',
-        interpolator: 'global',
         kernel: 'global',
         extractBeforeResize: 'global',
         extractAfterResize: 'global',
@@ -284,7 +278,6 @@ describe('gulp-responsive', function () {
         withoutEnlargement: 'test',
         skipOnEnlargement: 'test',
         ignoreAspectRatio: 'test',
-        interpolator: 'test',
         kernel: 'test',
         extractBeforeResize: 'test',
         extractAfterResize: 'test',
@@ -318,7 +311,6 @@ describe('gulp-responsive', function () {
       assert.equal(config[0].withoutEnlargement, 'test');
       assert.equal(config[0].skipOnEnlargement, 'test');
       assert.equal(config[0].ignoreAspectRatio, 'test');
-      assert.equal(config[0].interpolator, 'test');
       assert.equal(config[0].kernel, 'test');
       assert.equal(config[0].extractBeforeResize, 'test');
       assert.equal(config[0].extractAfterResize, 'test');
