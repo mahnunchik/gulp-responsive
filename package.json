@@ -11,7 +11,7 @@
     "url": "https://github.com/mahnunchik"
   },
   "engines": {
-    "node": ">=4.5.0"
+    "node": ">=6"
   },
   "scripts": {
     "test": "npm run lint && mocha",
