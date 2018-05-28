@@ -32,21 +32,21 @@
     "gulp-responsive-images"
   ],
   "dependencies": {
-    "async": "^2.6.0",
-    "chalk": "^2.3.0",
+    "async": "^2.6.1",
+    "chalk": "^2.4.1",
     "fancy-log": "^1.3.2",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.10",
     "minimatch": "^3.0.4",
-    "plugin-error": "^1.0.0",
-    "plur": "^2.1.2",
+    "plugin-error": "^1.0.1",
+    "plur": "^3.0.1",
     "rename": "^1.0.4",
-    "sharp": "^0.20.1",
+    "sharp": "^0.20.2",
     "through2": "^2.0.3",
     "vinyl": "^2.1.0"
   },
   "devDependencies": {
     "file-type": "^8.0.0",
     "jshint": "^2.9.5",
-    "mocha": "^5.0.0"
+    "mocha": "^5.2.0"
   }
 }
