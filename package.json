@@ -40,9 +40,9 @@
     "plugin-error": "^1.0.1",
     "plur": "^3.0.1",
     "rename": "^1.0.4",
-    "sharp": "^0.20.2",
+    "sharp": "^0.20.5",
     "through2": "^2.0.3",
-    "vinyl": "^2.1.0"
+    "vinyl": "^2.2.0"
   },
   "devDependencies": {
     "file-type": "^8.0.0",
