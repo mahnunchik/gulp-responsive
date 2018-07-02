@@ -199,9 +199,9 @@ describe('gulp-responsive', function () {
 
   });
 
-  describe('unmached/unused images', function () {
+  describe('unmatched/unused images', function () {
 
-    it('should not pass through unmached file by default when `errorOnUnusedImage` is false', function (cb) {
+    it('should not pass through unmatched file by default when `errorOnUnusedImage` is false', function (cb) {
       var stream = responsive({}, {
         errorOnUnusedImage: false
       });
@@ -221,7 +221,7 @@ describe('gulp-responsive', function () {
       stream.end();
     });
 
-    it('should pass through unmached file when `passThroughUnused` is true and `errorOnUnusedImage` is false', function (cb) {
+    it('should pass through unmatched file when `passThroughUnused` is true and `errorOnUnusedImage` is false', function (cb) {
       var expectedFile = makeFile('gulp.png');
 
       var stream = responsive({}, {
