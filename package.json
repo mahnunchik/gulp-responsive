@@ -41,7 +41,7 @@
     "plur": "^3.0.1",
     "rename": "^1.0.4",
     "sharp": "^0.20.5",
-    "through2": "^2.0.3",
+    "through2": "^3.0.0",
     "vinyl": "^2.2.0"
   },
   "devDependencies": {
