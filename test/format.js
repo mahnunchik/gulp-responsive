@@ -78,7 +78,7 @@ describe('gulp-responsive', function () {
     it('should convert image type to multiple specified by `format` option', function (done) {
       var config = [{
         name: 'gulp.png',
-        format: ['jpeg','webp'],
+        format: ['jpg','webp'],
       }];
       var stream = responsive(config);
       var counter = 0;
