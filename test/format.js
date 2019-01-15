@@ -74,5 +74,29 @@ describe('gulp-responsive', function () {
       stream.write(makeFile('gulp.png'));
       stream.end();
     });
+
+    it('should convert image type to multiple specified by `format` option', function (done) {
+      var config = [{
+        name: 'gulp.png',
+        format: ['jpg','webp'],
+      }];
+      var stream = responsive(config);
+      var counter = 0;
+
+      stream.on('data', function (file) {
+        counter++;
+        assertFile(file);
+        if (counter > 2) {
+          throw new Error('more than one file is provided');
+        }
+      });
+
+      stream.on('end', function () {
+        done();
+      });
+
+      stream.write(makeFile('gulp.png'));
+      stream.end();
+    });
   });
 });
