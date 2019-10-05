@@ -1,11 +1,11 @@
 'use strict'
 
 // eslint-disable-next-line
-var flog = require('fancy-log')
-var assert = require('assert')
-var path = require('path')
-var fs = require('fs')
-var Vinyl = require('vinyl')
+let flog = require('fancy-log')
+const assert = require('assert')
+const path = require('path')
+const fs = require('fs')
+const Vinyl = require('vinyl')
 
 function makeFile (name, file) {
   if (!file) {

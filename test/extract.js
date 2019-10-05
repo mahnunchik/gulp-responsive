@@ -2,15 +2,15 @@
 
 'use strict'
 
-var responsive = require('../')
+const responsive = require('../')
 
-var helpers = require('./helpers')
-var makeFile = helpers.makeFile
-var assertFile = helpers.assertFile
+const helpers = require('./helpers')
+const makeFile = helpers.makeFile
+const assertFile = helpers.assertFile
 
 describe('gulp-responsive', function () {
   function runTest (config, cb) {
-    var stream = responsive(config)
+    const stream = responsive(config)
     stream.on('end', function () {
       cb()
     })
@@ -22,7 +22,7 @@ describe('gulp-responsive', function () {
   }
 
   it('should let you extract before resize', function (cb) {
-    var config = [
+    const config = [
       {
         name: 'gulp.png',
         extractBeforeResize: { top: 0, left: 0, width: 10, height: 10 }
@@ -31,7 +31,7 @@ describe('gulp-responsive', function () {
     runTest(config, cb)
   })
   it('should let you extract after resize', function (cb) {
-    var config = [
+    const config = [
       {
         name: 'gulp.png',
         extractAfterResize: { top: 0, left: 0, width: 10, height: 10 }

@@ -2,18 +2,18 @@
 
 'use strict'
 
-var assert = require('assert')
-var path = require('path')
+const assert = require('assert')
+const path = require('path')
 
-var responsive = require('../')
+const responsive = require('../')
 
-var helpers = require('./helpers')
-var makeFile = helpers.makeFile
-var assertFile = helpers.assertFile
+const helpers = require('./helpers')
+const makeFile = helpers.makeFile
+const assertFile = helpers.assertFile
 
 describe('gulp-responsive', function () {
   it('should not do anything without images and configs', function (cb) {
-    var stream = responsive()
+    const stream = responsive()
 
     stream.on('end', cb)
     stream.on('data', function () {
@@ -24,14 +24,14 @@ describe('gulp-responsive', function () {
   })
 
   it('should provide one image when exactly one image and one config are provided', function (cb) {
-    var config = [
+    const config = [
       {
         name: 'gulp.png'
       }
     ]
-    var stream = responsive(config)
+    const stream = responsive(config)
 
-    var counter = 0
+    let counter = 0
 
     stream.on('data', function (file) {
       counter++
@@ -51,15 +51,15 @@ describe('gulp-responsive', function () {
   })
 
   it('should support source file in SVG format', function (cb) {
-    var config = [
+    const config = [
       {
         name: 'gulp.svg',
         format: 'png'
       }
     ]
-    var stream = responsive(config)
+    const stream = responsive(config)
 
-    var counter = 0
+    let counter = 0
 
     stream.on('data', function (file) {
       counter++
@@ -79,7 +79,7 @@ describe('gulp-responsive', function () {
   })
 
   it('should provide two image when one image and exactly two configs are provided', function (cb) {
-    var config = [
+    const config = [
       {
         name: 'gulp.png'
       },
@@ -87,9 +87,9 @@ describe('gulp-responsive', function () {
         name: 'gulp.png'
       }
     ]
-    var stream = responsive(config)
+    const stream = responsive(config)
 
-    var counter = 0
+    let counter = 0
 
     stream.on('data', function (file) {
       counter++
@@ -109,7 +109,7 @@ describe('gulp-responsive', function () {
   })
 
   it('should provide two image when one image match two configs', function (cb) {
-    var config = [
+    const config = [
       {
         name: 'gulp.png'
       },
@@ -117,9 +117,9 @@ describe('gulp-responsive', function () {
         name: '*.png'
       }
     ]
-    var stream = responsive(config)
+    const stream = responsive(config)
 
-    var counter = 0
+    let counter = 0
 
     stream.on('data', function (file) {
       counter++
@@ -140,13 +140,13 @@ describe('gulp-responsive', function () {
 
   describe('rename image', function () {
     it('should provide renamed image when rename is string', function (cb) {
-      var config = [
+      const config = [
         {
           name: 'gulp.png',
           rename: 'test.png'
         }
       ]
-      var stream = responsive(config)
+      const stream = responsive(config)
 
       stream.on('data', function (file) {
         assertFile(file)
@@ -165,7 +165,7 @@ describe('gulp-responsive', function () {
     })
 
     it('should provide renamed image when rename is object', function (cb) {
-      var config = [
+      const config = [
         {
           name: 'gulp.png',
           rename: {
@@ -173,7 +173,7 @@ describe('gulp-responsive', function () {
           }
         }
       ]
-      var stream = responsive(config)
+      const stream = responsive(config)
 
       stream.on('data', function (file) {
         assertFile(file)
@@ -192,7 +192,7 @@ describe('gulp-responsive', function () {
     })
 
     it('should provide renamed image when rename is function', function (cb) {
-      var config = [
+      const config = [
         {
           name: 'gulp.png',
           rename: function (path) {
@@ -201,7 +201,7 @@ describe('gulp-responsive', function () {
           }
         }
       ]
-      var stream = responsive(config)
+      const stream = responsive(config)
 
       stream.on('data', function (file) {
         assertFile(file)
@@ -222,14 +222,14 @@ describe('gulp-responsive', function () {
 
   describe('unmatched/unused images', function () {
     it('should not pass through unmatched file by default when `errorOnUnusedImage` is false', function (cb) {
-      var stream = responsive(
+      const stream = responsive(
         {},
         {
           errorOnUnusedImage: false
         }
       )
 
-      var counter = 0
+      let counter = 0
 
       stream.on('data', function () {
         counter++
@@ -245,9 +245,9 @@ describe('gulp-responsive', function () {
     })
 
     it('should pass through unmatched file when `passThroughUnused` is true and `errorOnUnusedImage` is false', function (cb) {
-      var expectedFile = makeFile('gulp.png')
+      const expectedFile = makeFile('gulp.png')
 
-      var stream = responsive(
+      const stream = responsive(
         {},
         {
           errorOnUnusedImage: false,
@@ -255,7 +255,7 @@ describe('gulp-responsive', function () {
         }
       )
 
-      var counter = 0
+      let counter = 0
 
       stream.on('data', function (file) {
         counter++
@@ -276,14 +276,14 @@ describe('gulp-responsive', function () {
     })
 
     it('should skip enlarged image when `skipOnEnlargement` is true', function (cb) {
-      var config = [
+      const config = [
         {
           name: 'gulp.png',
           width: 10000
         }
       ]
 
-      var stream = responsive(config, {
+      const stream = responsive(config, {
         errorOnEnlargement: false,
         skipOnEnlargement: true
       })

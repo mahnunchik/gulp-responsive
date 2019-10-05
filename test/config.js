@@ -2,13 +2,13 @@
 
 'use strict'
 
-var assert = require('assert')
-var prepareConfig = require('../lib/config')
+const assert = require('assert')
+const prepareConfig = require('../lib/config')
 
 describe('gulp-responsive', function () {
   describe('config', function () {
     it('should set default values for unspecified config options', function () {
-      var config = prepareConfig([
+      const config = prepareConfig([
         {
           name: 'gulp.png'
         }
@@ -49,7 +49,7 @@ describe('gulp-responsive', function () {
     })
 
     it('should not override specified values', function () {
-      var config = prepareConfig([
+      const config = prepareConfig([
         {
           name: 'gulp.png',
           width: 100,
@@ -121,7 +121,7 @@ describe('gulp-responsive', function () {
 
   describe('config parsing', function () {
     it('should parse config object', function () {
-      var config = prepareConfig({
+      const config = prepareConfig({
         'gulp.png': {
           width: 100
         }
@@ -132,7 +132,7 @@ describe('gulp-responsive', function () {
     })
 
     it('should parse config object of arrays', function () {
-      var config = prepareConfig({
+      const config = prepareConfig({
         'gulp.png': [
           {
             width: 100
@@ -151,7 +151,7 @@ describe('gulp-responsive', function () {
     })
 
     it('should leave config array as is', function () {
-      var config = prepareConfig([
+      const config = prepareConfig([
         {
           name: 'gulp1.png',
           width: 100
@@ -172,7 +172,7 @@ describe('gulp-responsive', function () {
 
   describe('global config', function () {
     it('should override default values', function () {
-      var globalConfig = {
+      const globalConfig = {
         crop: 'test',
         embed: 'test',
         min: 'test',
@@ -203,7 +203,7 @@ describe('gulp-responsive', function () {
         compressionLevel: 'test',
         format: 'test'
       }
-      var config = prepareConfig(
+      const config = prepareConfig(
         [
           {
             name: 'gulp.png'
@@ -246,7 +246,7 @@ describe('gulp-responsive', function () {
     })
 
     it('should not override values specified per file', function () {
-      var globalConfig = {
+      const globalConfig = {
         crop: 'global',
         embed: 'global',
         min: 'global',
@@ -277,7 +277,7 @@ describe('gulp-responsive', function () {
         compressionLevel: 'global',
         format: 'global'
       }
-      var config = prepareConfig(
+      const config = prepareConfig(
         [
           {
             name: 'gulp.png',
