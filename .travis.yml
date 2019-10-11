@@ -1,15 +1,15 @@
 language: node_js
 node_js:
-- '6'
-- '8'
-- '10'
+  - '8'
+  - '10'
+  - '12'
 sudo: false
 addons:
   apt:
     sources:
-    - ubuntu-toolchain-r-test
+      - ubuntu-toolchain-r-test
     packages:
-    - g++-4.8
+      - g++-4.8
 env: CXX=g++-4.8 NODE_ENV=test
 deploy:
   provider: npm
@@ -19,4 +19,4 @@ deploy:
   on:
     tags: true
     repo: mahnunchik/gulp-responsive
-    node: '6'
+    node: '8'
