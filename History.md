@@ -1,3 +1,13 @@
+
+# 3.0.0 / 2019-10-12
+
+- Suport for sharp `0.23.1` [#129](https://github.com/mahnunchik/gulp-responsive/pull/129)
+- Remove support for Node.js 6 [#129](https://github.com/mahnunchik/gulp-responsive/pull/129)
+- Support for Node.js 8,10,12 [#129](https://github.com/mahnunchik/gulp-responsive/pull/129)
+- Refactor codebase [#129](https://github.com/mahnunchik/gulp-responsive/pull/129)
+- Avoid renaming extname [#116](https://github.com/mahnunchik/gulp-responsive/pull/116)
+- Fix value for chroma subsampling setting [#116](https://github.com/mahnunchik/gulp-responsive/pull/116)
+
 # 2.6.0 / 2016-09-15
 
 - add: `kernel` option
