@@ -1,21 +1,21 @@
 language: node_js
 node_js:
-  - '8'
-  - '10'
-  - '12'
+- '8'
+- '10'
+- '12'
 sudo: false
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
+    - g++-4.8
 env: CXX=g++-4.8 NODE_ENV=test
 deploy:
   provider: npm
   email: mahnunchik@gmail.com
   api_key:
-    secure: KEJHeC7dEuxQreiFaDu9wIK2c/Sa19w5y4okfE1FyOoLDFBOsfsPDH9CRTacw2miJFmyjTAT5pvuACZS2mHwwopsd4B+vk5KmauUFgoz86AeY8EIbG+yP+uRiSdFJbA9B0Y2oeNOGqDqYs+rZ+XvMythOJS7eG0gfFKLv26sDfY=
+    secure: h5AIF8JHbNUD4LwhkVY5/HNMndgFqxKS8gnBlNb6pGl1BN7/q4g+p+7WbyfsZHaylZTOaNuxph7RY8O5dax8n1pFTJ2pJNByruOPXBQzm/ksPiMfOZLvJN4SLVFsKb0EJPkjosLJqo/5t82Ab2gRT5OlJq6ZiyNIY9UcKP6KQUI=
   on:
     tags: true
     repo: mahnunchik/gulp-responsive
