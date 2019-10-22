@@ -51,7 +51,7 @@
     "vinyl": "^2.2.0"
   },
   "devDependencies": {
-    "file-type": "^12.3.0",
+    "file-type": "^12.3.1",
     "husky": "^3.0.8",
     "jshint": "^2.10.2",
     "mocha": "^6.2.1",
