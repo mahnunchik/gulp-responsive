@@ -8,7 +8,7 @@
 
 `gulp-responsive` depends on [sharp](https://github.com/lovell/sharp). Sharp is one of the fastest Node.js modules for resizing JPEG, PNG, WebP and TIFF images.
 
-If you are using Mac OS then before installing `gulp-responsive` you should install the [libvips](https://github.com/jcupitt/libvips) library. Further information and instructions can be found in the [sharp installation guide](http://sharp.dimens.io/en/stable/install/).
+If you are using Mac OS then before installing `gulp-responsive` you should install the [libvips](https://github.com/jcupitt/libvips) library. Further information and instructions can be found in the [sharp installation guide](https://sharp.pixelplumbing.com/en/stable/install/).
 
 ```sh
 $ npm install --save-dev gulp-responsive
