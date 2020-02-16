@@ -44,7 +44,7 @@
     "lodash": "^4.17.15",
     "minimatch": "^3.0.4",
     "plugin-error": "^1.0.1",
-    "plur": "^3.1.1",
+    "plur": "^4.0.0",
     "rename": "^1.0.4",
     "sharp": "^0.23.1",
     "through2": "^3.0.1",
