@@ -46,6 +46,7 @@ describe('gulp-responsive', function () {
       assert.strictEqual(config[0].withoutChromaSubsampling, false)
       assert.strictEqual(config[0].compressionLevel, 6)
       assert.strictEqual(config[0].format, null)
+      assert.strictEqual(config[0].fit, 'cover')
     })
 
     it('should not override specified values', function () {
